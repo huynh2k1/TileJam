@@ -7,6 +7,8 @@ public class UIHome : BaseUI
 {
     [SerializeField] Button _btnPlay;
     [SerializeField] Button _btnHowToPlay;
+    [SerializeField] UIHowToPlay _uiHTP;
+    [SerializeField] UISelectLevel _uISelectLevel;
 
     private void Awake()
     {
@@ -16,11 +18,16 @@ public class UIHome : BaseUI
 
     public void OnClickPlay()
     {
-
+        _uISelectLevel.Show(true);
     }
 
     public void OnClickHowToPlay()
     {
+        ShowHTP();
+    }
 
+    public void ShowHTP()
+    {
+        _uiHTP.Show(true);
     }
 }

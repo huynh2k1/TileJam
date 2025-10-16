@@ -6,12 +6,11 @@ public class Board : MonoBehaviour
 {
     public static Board I;
 
-    [SerializeField] List<Block> listPath;
-    [SerializeField] DataSO data;
     public Level CurLevel { get; set; }
 
     [SerializeField] Block block1;
     [SerializeField] Block block2;
+    [SerializeField] List<Block> listPath;
 
     private void Awake()
     {

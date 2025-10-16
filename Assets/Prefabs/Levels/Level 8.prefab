@@ -267,6 +267,10 @@ PrefabInstance:
       value: Level 8
       objectReference: {fileID: 0}
     - target: {fileID: 8666429459191618921, guid: e4820423e0e77b3459462e8a8f71bf4a, type: 3}
+      propertyPath: Move
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666429459191618921, guid: e4820423e0e77b3459462e8a8f71bf4a, type: 3}
       propertyPath: Rows
       value: 4
       objectReference: {fileID: 0}

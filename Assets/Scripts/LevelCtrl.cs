@@ -4,7 +4,6 @@ public class LevelCtrl : MonoBehaviour
 {
     [SerializeField] DataSO data;
     Level curLevel;
-    int _move;
 
     public void InitLevel()
     {
@@ -12,8 +11,8 @@ public class LevelCtrl : MonoBehaviour
         {
             DestroyCurLevel();
         }
-        curLevel = Instantiate(data.levelDatas[PrefData.CurLevel].level, transform);
-        GameCtrl.I.SetMove(data.levelDatas[PrefData.CurLevel].move);
+        curLevel = Instantiate(data.levelDatas[PrefData.CurLevel], transform);
+        GameCtrl.I.SetMove(curLevel.Move);
         Board.I.CurLevel = curLevel;   
     }
 

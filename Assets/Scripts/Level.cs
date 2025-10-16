@@ -5,9 +5,10 @@ using System.Linq;
 public class Level : MonoBehaviour
 {
     public bool IsAutoGrid;
+    public int Move;
     public int Rows;
     public int Columns;
-
+    
     [SerializeField] BoatCtrl boat;
     private List<Block> blocks;
     public Block[,] grid;
@@ -26,16 +27,16 @@ public class Level : MonoBehaviour
         SetUpBoat();
         
     }
-    //private void OnValidate()
-    //{
-    //    if (!IsAutoGrid)
-    //        return;
-    //    blocks = GetComponentsInChildren<Block>().ToList();
+    private void OnValidate()
+    {
+        if (!IsAutoGrid)
+            return;
+        blocks = GetComponentsInChildren<Block>().ToList();
 
-    //    Initialization();
-    //    GetStartBlock();
-    //    SetUpBoat();
-    //}
+        Initialization();
+        GetStartBlock();
+        SetUpBoat();
+    }
     void GetStartBlock()
     {
         foreach (var block in blocks)
@@ -69,10 +70,10 @@ public class Level : MonoBehaviour
                     Vector3 pos = new Vector3(c * spacing - gridWidth, 0, r * spacing);
                     b.SetPos(pos);
                     b.GridPos = new Vector2Int(r, c);
-                    b.name = $"({r}, {c})";
                     grid[r, c] = b;
                 }
                 index++;
+                b.name = $"{index}";
             }
         }
     }

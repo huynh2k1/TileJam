@@ -62,8 +62,10 @@ public class ScrollMenuCtrl : MonoBehaviour, IEndDragHandler
 
     void MovePage()
     {
-        //targetPos = pageStep * (currentPage - 1);
         Debug.Log("Target: " + targetPos);
+        
+        targetPos = pageStep * (currentPage - 1);
+        levelPagesRect.DOKill();
         levelPagesRect.DOAnchorPosX(targetPos, tweenTime).SetEase(Ease.Linear);
 
         CheckActiveBtnNext();
